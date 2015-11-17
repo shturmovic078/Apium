@@ -1,0 +1,31 @@
+package com.appium.mobilebrowser;
+
+import java.net.URL;
+
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
+
+import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.Test;
+
+
+
+public class LaunchDefaultAndroidBrowser {
+
+	@Test
+	public void testLaunchBrowser() throws Exception{
+		
+		DesiredCapabilities caps = new DesiredCapabilities();
+		 caps.setCapability("automationName", "Appium");
+		 caps.setCapability("platformName", "Android");
+		 caps.setCapability("platformVersion", "4.4.2");
+		 caps.setCapability("deviceName", "smsung-sph_I710t-37c398e5");
+		 caps.setCapability("appPackage", "com.sec.android.app.sbrowsertry");
+	
+		AndroidDriver driver=new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), caps);
+		
+		
+	}
+
+}
